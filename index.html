@@ -1,72 +1,364 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Protocolo Zero Barriga</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no"/>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Dosis:wght@200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="icon" href="">
+	<link rel="icon" type="image/x-icon" href="" />
 
-    <link rel="stylesheet" href="./assets/css/com.css">
+	<link href="./assets/css/fontawesome-all.css" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:500,700,900|Lato:400,700,900|Open+Sans:400,700|Roboto+Mono:300,400&display=swap" rel="stylesheet">
 
-    <!-- Título da Página -->
-    <title>Protocolo Zero Barriga</title>
-    
-    <style type="text/css">
-      body {
-        color: white;
-        background-image: url("assets/img/bg.jpeg");
-        background-color: rgba(0, 0, 0, 0.6);
-        background-position: center;
-        background-size: cover;
-        background-attachment: fixed;
-        background-blend-mode: darken;
-      }
-    </style>
+	<link href="./assets/css/funnels/style1.css" rel="stylesheet" type="text/css">
+	
+	<style>
+		body {background: #FFF!important;}
+		body section.vsl1 {background: #0092D6; height: 100vh; position: relative; padding: 0!important; overflow: hidden; display: -ms-flexbox!important;display: flex!important; -ms-flex-direction: column!important; flex-direction: column!important; -ms-flex-pack: center!important; justify-content: center!important; -ms-flex-align: center!important;align-items: center!important;}
+		body section.vsl1 .video-wrapper {width: 100vw;height: 56.25vw;max-height: 100vh;max-width: 177.77vh;margin: auto;}
+		body section.vsl1 .wistia_responsive_padding {width: 100%; padding:56.25% 0 0 0;position:relative; overflow: hidden;}
+		body section:before,body section:after {content:''; display: table; clear: both;}
+		img {max-width: 100%!important;}
+		.clearfix:before,.clearfix:after {content:''; display: table; clear: both;}
+		.trustseals {margin-top: 0;}
+		.choosepackagebutton {width: 350px;}
+		.bg-white {background-color: #FFF;}
+		.bg-blue {background: #0092D6;}
+		.bg-green {background: #04B050;}
+		.bg-yellow {background: #FFF199;}
+		.text-white {color: #FFF!important;}
+		.text-green {color: #04B050!important;}
+		.text-red {color: #FF0005!important;}
+		.text-blue {color: #0092D6!important;}
+		.btn {display: inline-flex; align-items: center; background: #0092D6; color: #FFF; border-radius: 5px; padding: 10px 60px; font-weight: 700; font-size: 1.1rem; cursor: pointer; text-decoration: none; border: 0;}
+		.btn:hover,.btn:focus,.btn:active {background: #0071A5; border: 0; outline: 0;}
+		.btn-block {display: block; text-align: center;}
+		.btn-green {background: #04B050!important;}
+		.btn-green:hover,.btn-green:focus,.btn-green:active {background: #038b41!important;}
+		.btn b {font-weight: 800;}
+		.arrow-right {display: inline-block;width: 0; height: 0; border-top: 1rem solid transparent;border-bottom: 1rem solid transparent;  border-left: 1.7rem solid #fff;margin-right: .7rem;}
+		.page-lines {display: inline-block;width: 1.7rem; height: 2rem;margin-right: .7rem; position: relative; border-top: 3px solid #fff;}
+		.page-lines:before {content:''; display: block; background: #fff; width: 100%; height: 3px; position: absolute; top: 4px; left: 0;}
+		.page-lines i:before {content:''; display: block; background: #fff; width: 100%; height: 3px; position: absolute; top: 11px; left: 0;}
+		.page-lines i:after {content:''; display: block; background: #fff; width: 100%; height: 3px; position: absolute; top: 18px; left: 0;}
+		.page-lines:after {content:''; display: block; background: #fff; width: 50%; height: 3px; position: absolute; top: 25px; left: 0;}
+		.mx-1 {margin-left: .5rem; margin-right: .5rem;}
+		.mx-2 {margin-left: 1rem; margin-right: 1rem;}
+		.add-cart {display: block;}
+		.btns-row {display: flex;align-items: center;justify-content: center;}
 
-  </head>
-  <body>
-    
-    <header class="py-4">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
-            <!-- Imagem Ultrasecreto -->
-            <img class="img-fluid" src="./assets/img/ultrasecreto.svg">
-			
-            <!-- Imagem Headline -->
-            <img class="img-fluid" src="./assets/img/headline.svg">			
+		.info-box {margin: 0px -10px; padding: 10px 10px; font-weight: 700;}
+		.info-box p:first-child {margin-top: 0;}
+		.info-box p:last-child {margin-bottom: 0;}
 
-            
+		.cursor-pointer {cursor: pointer;}
 
-            <!-- VSL -->
-			<script src="https://fast.wistia.com/embed/medias/7v6csrwyzm.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_7v6csrwyzm videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/7v6csrwyzm/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>
+		.exitPopup {font-family: 'Lato', sans-serif; font-size: 1.25rem;}
+		.exitPopup h2 {font-size: 4rem;}
+		.exitPopup h4 {font-size: 2.1rem;}
+		.exitPopup .btn {font-size: 1.7rem; padding:20px; border-radius: 10px; line-height: 1.8rem}
+		.exitPopup .pop-inner{width: 650px; padding: 25px; max-width: 100%; overflow: hidden; border: none;}
+		.exitPopup .pop-inner ul {padding: 0; margin-left: 2em;}
+		.exitPopup .pop-header {margin: -25px -25px 15px; padding: 10px 0;}
+		.exitPopup .pop-header h2 {margin: 0; padding: 0; }
+		.exitPopup .pop-voucher {display: flex; align-items: center; justify-content: center; margin: 40px 0; padding: 10px; border: 3px dashed #FF0005; color: #FF0005; text-align: center; font-size: 3rem; font-weight: 800;}
+		.exitPopup .pop-voucher img {height: 155px; margin: -55px 0;}
+		.exitPopup .pop-arrow-down {padding: 10px 35px 10px 0; background: transparent url("assets/images/funnels/arrow-down-pop.png") no-repeat center right / contain;}
+		.exitPopup .popilicious-close {top: 5px; right: 5px; border-radius: 100%; padding: 0; width: 25px; height: 25px; background: rgba(0,0,0,.4);}
+		.exitPopup .popilicious-close:before {content: '';display: block; position: absolute; top: 2px; right: 12px; height: 21px; width: 1px; background: #fff; transform: rotate(45deg);}
+		.exitPopup .popilicious-close:after {content: '';display: block; position: absolute; top: 2px; right: 12px; height: 21px; width: 1px; background: #fff; transform: rotate(-45deg);}
 
-            <!-- Botão -->
-            <div id="cta1" class="mt-4 d-none">
-              <a href="https://pay.kiwify.com.br/vph5YOA" class="a-btn" style="text-decoration: none;">
-                <span class="span-btn">QUERO OBTER ACESSO!</span>
-                <span class="span-btn2">(atenção: vagas limitadas)</span>
-              </a>
-            </div>
+		#unmute-overlay,#pause-overlay {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8) url("assets/images/funnels/button.gif") no-repeat center center / 35%;}
 
-            <!-- Termos de Uso e Política de Privacidade -->
-            <div class="text-white mt-4"><a href="termos.html" class="text-white">Termos de Uso</a> | <a href="privacidade.html" class="text-white">Política de Privacidade</a></div>
-          </div>
+		.pricingbox .pricingbox-desktop {display: block;}
+		.pricingbox .pricingbox-mobile {display: none;}
+		@media only screen and (max-width: 767px){
+			body section.vsl1 {height: auto;}
+			.pricingbox {margin-left: 15px; margin-right: 15px;}
+			.pricingbox .pricingbox-desktop {display: none!important;}
+			.pricingbox .pricingbox-mobile {display: block!important;}
+		}
+		@media (max-width: 767px) and (orientation:portrait) {
+			body section.vsl1 .video-wrapper {width: 90vw; height: 177.778vw; max-height: 100vh; max-width: 50vh; margin: auto;}
+			body section.vsl1 .wistia_responsive_padding { padding:177.19% 0 0 0!important;}
+
+			#unmute-overlay,#pause-overlay {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8) url("assets/images/funnels/button.gif") no-repeat center center / 65%;}
+		}
+		@media (min-width: 768px) and (max-width: 1024px) and (orientation:portrait) {
+			body section.vsl1 {height: auto;}
+		}
+	</style>
+	
+	
+</head>
+
+<body class="vsl1">
+
+
+<section class="vsl1">
+	<script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+	<div class="video-wrapper">
+		<div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+			<div id="wistia-video" class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+			</div>
+		</div>
+	</div>
+	<div id="unmute-overlay"></div>
+	<div id="pause-overlay" style="display: none"></div>
+
+</section>
+
+<section class="bg-blue hiddenContent" style="display: none;">
+	<div class="col900">
+		<div style = "padding-bottom: 12px;"></div>
+
+
+
+		<div class="clearfix"></div>
+
+		
+		
+		
+		<p class="tac">
+			<a href="#choosepackage"><img src="./assets/images/funnels/choosepackage.svg" alt="Choose Your Package" class="choosepackagebutton"/></a>
+		</p>
+	</div>
+</section>
+
+<div class="clearfix"></div>
+<section class="references">
+	<div class="row">
+		<div class="col900">
+
+
+		</div>
+	</div>
+</section>
+
+<div class="clearfix"></div>
+
+
+<section class="trustseals">
+	<p>&nbsp;</p>
+	<img src="./assets/images/funnels/securityseals.png" alt="" class="aligncenter img-fluid" />
+	<p>&nbsp;</p>
+	<p class="policy"><a href="privacidade.html" target="_blank" rel="noopener noreferrer">Política de Privacidade</a> | <a href="termos.html" target="_blank" rel="noopener noreferrer">Termos de Uso</a></p>
+	<div id="fda">&#10013; STATEMENTS ON THIS WEBSITE HAVE NOT BEEN EVALUATED BY THE FOOD AND DRUG ADMINISTRATION. PRODUCTS ARE NOT INTENDED TO DIAGNOSE, TREAT, CURE OR PREVENT ANY DISEASE.</div>
+	<p class="copyright">Copyright &copy; 2022&nbsp; Protocolo Zero Barriga. Todos os Direitos Reservados.</p>
+</section> 
+
+<!-- exitPop 1 -->
+<div id="exitPop1" class="exitPopup hide-it">
+    <div class="pop-inner">
+        <span class="popilicious-close" data-popup="1"></span>
+        <div class="pop-header bg-green">
+            <h2 class="text-white">Wait!</h2>
         </div>
-      </div>
-    </header>
+        <div class="pop-body">
+            <p>It&rsquo;s my duty and obligation to make sure you don&rsquo;t leave empty-handed without trying this evidence-based, <b><u>10-second fat-burning secret.</u></b></p>
+            <p>It&rsquo;s <b><u>backed by over 200 research studies</u></b> and it's so effective the medical community and big pharma are trying to censor it.</p>
+            <div class="bg-yellow info-box">
+                <p>Click <b class="text-green ep-watch-select cursor-pointer" data-popup="1"><u>Watch Video</u></b> below before they catch wind of this video and force it to be taken it down.</strong></p>
+                <p>Click the <b class="text-blue ep-read-select cursor-pointer"><u>Read Transcript</u></b> below and read how this 10-second protocol can increase fat burning up to 400%.</p>
+            </div>
+			<div style = "padding-bottom: 28px;"></div>
+<!--            <p>Or call <strong>800-292-4270</strong> to get your questions answered by one of our professional customer service representatives.</p> -->            <div class="btns-row">
+                <button type="button" class="btn btn-green mx-2 ep-watch-select" data-popup="1"><span class="arrow-right"><i></i></span>Watch Video</button>
+                <button type="button" class="btn btn-blue mx-2 ep-read-select"><span class="page-lines"><i></i></span>Read Transcript</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <script type="text/javascript">
-      setTimeout(() => {document.getElementById("cta1").classList.remove("d-none")}, 1638000); // temporização da Call to Action (em milissegundos)
-    </script>
+<script src="./assets/js/base-full.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="./assets/js/com.js"></script>
-  </body>
+
+<!--Wistia controls (variação do formato video)-->
+<script>
+
+	var $browserdevice = (/android|webos|iphone|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
+
+	var video;
+	var reveal_at = "2512";
+
+	window._wq = window._wq || [];
+
+	var vid_id = "0dxqzi5f9s";
+	if(window.innerHeight > window.innerWidth && $browserdevice){
+		var vid_id = "0dxqzi5f9s";
+	}
+	document.getElementById('wistia-video').innerHTML = '<div class="wistia_embed wistia_async_'+vid_id+'" style="height:100%;position:relative;width:100%"></div>';
+
+	_wq.push({
+		id: vid_id,
+		options: {
+			settingsControl: false,
+		},
+		onReady: function(video) {
+
+			if(!window.PLAYERS)
+				window.PLAYERS = [];
+			window.PLAYERS["video"] = video;
+
+			video.play();
+			video.bind('secondchange', function(s) {
+				if (s >= reveal_at) {
+					$('.hiddenContent').show();
+					video.unbind('secondchange');
+				}
+			});
+			video.bind("silentplaybackmodechange", function (inSilentPlaybackMode) {
+				if(!inSilentPlaybackMode){
+					$('#unmute-overlay').hide();
+					window.PLAYERS["video"].unmute();
+					video.time(0);
+				}
+			});
+			video.bind("play", function () {
+				$(document).trigger('player.video.started');
+			});
+			video.bind("pause", function () {
+				$(document).trigger('player.video.paused');
+			});
+			video.bind("end", function () {
+				$(document).trigger('player.video.ended');
+			});
+		}
+	});
+</script>
+
+
+<script>
+	videoPlaying = false;
+	$(document).on("player.video.started", function (event, data) {
+		if(!videoPlaying){
+			videoPlaying = true;
+			$("#pause-overlay").hide();
+		}
+	});
+
+	$(document).on("player.video.paused", function (event, data) {
+		videoPlaying = false;
+		$("#pause-overlay").show();
+	});
+	$(document).on("player.video.ended", function (event, data) {
+		videoPlaying = false;
+		$('.hiddenContent').show();
+		$("#pause-overlay").show();
+	});
+
+	$("#pause-overlay").on('click', function(){
+		window.PLAYERS["video"].play();
+		$(this).hide();
+	});
+
+	$("#unmute-overlay").on('click', function(){
+		window.PLAYERS["video"].unmute();
+		$(this).hide();
+	});
+
+</script>
+
+<script>
+	var has_run = false;
+	document.cookie.split(";").map(function(item){
+		if(item.trim().indexOf("_popped") > -1){
+			has_run=true;
+		}
+		if(item.trim().indexOf("_revealed") > -1){
+			$('.hiddenContent').show();
+		}
+	});
+
+
+	$(".popilicious-close,.btn-close").on("click", function (e) {
+		var count = $(this).data('popup');
+		document.getElementById("exitPop"+count).classList.add("hide-it");
+		window.PLAYERS["video"].play();
+	});
+
+	$(".ep-watch-select").on("click", function (e) {
+		var count = $(this).data('popup');
+		document.getElementById("exitPop"+count).classList.add("hide-it");
+		window.PLAYERS["video"].play();
+	});
+	$(".ep-read-select").on("click", function (e) {
+		var url = "main-b40-lb3x-sl4.php?hop=0";
+
+		var vars = {};
+		var hashes = window.location.search.substring(1).split('&');
+		for(var i = 0; i < hashes.length; i++){
+			hash = hashes[i].split('=');
+			vars[hash[0]] = hash[1] ? hash[1].replace("#",'') : "";
+		}
+
+		window.location.href = url;
+	});
+
+</script>
+
+<script>
+	$(".add-cart").click(function (e) {
+		e.preventDefault();
+		var url = "cb-of.php?";
+
+		var product_id = $(this).attr('data-product');
+		var funnel_id = $(this).attr('data-funnel');
+
+		var pass = {
+			cbitems: product_id,
+			cbfid: funnel_id,
+			cbskin:34277,
+//			cbexit:2072,
+		};
+
+		var urlstring = Object.keys(pass).map(function (k, v) { return k + "=" + pass[k]; }).join("&");
+		var cookiestring = "vtid=02340122";
+
+		var vars = {};
+		var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+		for(var i = 0; i < hashes.length; i++){
+			hash = hashes[i].split('=');
+			vars[hash[0]] = hash[1] ? hash[1].replace("#",'') : "";
+		}
+		if(vars){
+			delete vars.vtid
+			cookiestring = cookiestring + '&' + Object.keys(vars).map(function (k, v) { return k + "=" + vars[k]; }).join("&");
+		}
+
+        document.cookie = "_cbleanbelly_pm="+cookiestring+";max-age=3600;path=/;";
+
+		url = url + urlstring + '&' + cookiestring;
+
+		window.location.href = url;
+	});
+
+	document.cookie = "_revealed=1;max-age=43200;path=/;";
+</script>
+
+
+<!-- ClickBank Trust Badge -->
+<script src='//cbtb.clickbank.net/'></script>
+<script>
+	$(document).ready(function () {
+		$("html").bind("mouseleave", function (e) {
+			if( e.clientY < 0 ){
+				var ispopped = $( '.exitPopup:not(.hide-it)').length
+				if(!ispopped){
+					var elem = document.getElementById("exitPop1");
+					if(elem){
+						window.PLAYERS["video"].pause();
+						elem.classList.remove("hide-it");
+					}
+
+					$("html").unbind("mouseleave");
+				}
+			}
+		});
+	});
+</script>
+</body>
 </html>
