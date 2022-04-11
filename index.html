@@ -139,9 +139,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </section>
 
-
 <section class="bg-blue hiddenContent" style="display: none;">
-	<div class="container hiddencontent">
+	<div class="add-cart">
 		<div style = "padding-bottom: 12px;"></div>
 
 
@@ -161,7 +160,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="references">
 	<div class="row">
-		<div class="container hiddencontent">
+		<div class="add-cart">
 
 
 		</div>
@@ -333,7 +332,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </script>
 
+<script>
+	$(".add-cart").click(function (e) {
+		e.preventDefault();
+		var url = "cb-of.php?";
 
+		var product_id = $(this).attr('data-product');
+		var funnel_id = $(this).attr('data-funnel');
+
+		var pass = {
+			cbitems: product_id,
+			cbfid: funnel_id,
+			cbskin:34277,
+//			cbexit:2072,
+		};
+
+		var urlstring = Object.keys(pass).map(function (k, v) { return k + "=" + pass[k]; }).join("&");
+		var cookiestring = "vtid=01183000";
+
+		var vars = {};
+		var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+		for(var i = 0; i < hashes.length; i++){
+			hash = hashes[i].split('=');
+			vars[hash[0]] = hash[1] ? hash[1].replace("#",'') : "";
+		}
+		if(vars){
+			delete vars.vtid
+			cookiestring = cookiestring + '&' + Object.keys(vars).map(function (k, v) { return k + "=" + vars[k]; }).join("&");
+		}
+
+        document.cookie = "_cbleanbelly_pm="+cookiestring+";max-age=3600;path=/;";
+
+		url = url + urlstring + '&' + cookiestring;
+
+		window.location.href = url;
+	});
+
+	document.cookie = "_revealed=1;max-age=43200;path=/;";
+</script>
 
 
 <!-- ClickBank Trust Badge -->
@@ -356,14 +392,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		});
 	});
 	
-</script><script> 
- 	  $( document ).ready( function() {
-    	setTimeout( function() {
-    		$( ".hiddencontent" ).show();
-    	}, 1183000 );
-		
-			} );
-  
-</script>  
+</script>
 </body>
 </html>
