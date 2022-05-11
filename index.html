@@ -16,11 +16,11 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '703389114147011');
+  fbq('init', '526788818851654');
   fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=703389114147011&ev=PageView&noscript=1"
+  src="https://www.facebook.com/tr?id=526788818851654&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
@@ -238,7 +238,7 @@ src: url(data:application/x-font-woff;charset=utf-8;base64,d09GMk9UVE8AAAaMAAwAA
 	var $browserdevice = (/android|webos|iphone|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
 
 	var video;
-	var reveal_at = "1185000";
+	var reveal_at = "3";
 
 	window._wq = window._wq || [];
 
@@ -302,7 +302,6 @@ src: url(data:application/x-font-woff;charset=utf-8;base64,d09GMk9UVE8AAAaMAAwAA
 	});
 	$(document).on("player.video.ended", function (event, data) {
 		videoPlaying = false;
-		$('.hiddenContent').show();
 		$("#pause-overlay").show();
 	});
 
@@ -319,15 +318,7 @@ src: url(data:application/x-font-woff;charset=utf-8;base64,d09GMk9UVE8AAAaMAAwAA
 </script>
 
 <script>
-	var has_run = false;
-	document.cookie.split(";").map(function(item){
-		if(item.trim().indexOf("_popped") > -1){
-			has_run=true;
-		}
-		if(item.trim().indexOf("_revealed") > -1){
-			$('.hiddenContent').show();
-		}
-	});
+
 
 
 	$(".popilicious-close,.btn-close").on("click", function (e) {
